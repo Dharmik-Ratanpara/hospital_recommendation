@@ -1,6 +1,6 @@
 class HospitalDummy {
   final Map<String, Map<String, Map<String, int>>> _hospitalData = {
-    'surat': {
+    'Surat': {
       'sims': {
         'icu': 41,
         'general': 42,
@@ -38,7 +38,7 @@ class HospitalDummy {
         'children\'s ward': 72,
       }
     },
-    'ahmedabad': {
+    'Ahmedabad': {
       'hcg': {
         'icu': 83,
         'general': 32,
@@ -70,7 +70,7 @@ class HospitalDummy {
         'children\'s ward': 73,
       }
     },
-    'rajkot': {
+    'Rajkot': {
       'synergy': {
         'icu': 27,
         'general': 72,
@@ -110,10 +110,8 @@ class HospitalDummy {
     }
   };
 
-  final String city;
-
-  HospitalDummy(this.city);
-
-  Map<String, Map<String, int>> get hospitals =>
+  Map<String, Map<String, int>> hospitalsInCity(String city) =>
       _hospitalData[city] as Map<String, Map<String, int>>;
+
+  List<String> getCities() => _hospitalData.keys.toList();
 }

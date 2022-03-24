@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospital_recommendation/screens/home_screen.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({
@@ -53,10 +54,21 @@ class SideDrawer extends StatelessWidget {
             'My Profile',
             Icons.person,
           ),
-          buildListTile(
-            context,
-            'Home',
-            Icons.home,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (_) {
+                    return const HomeScreen();
+                  },
+                ),
+              );
+            },
+            child: buildListTile(
+              context,
+              'Home',
+              Icons.home,
+            ),
           ),
           buildListTile(
             context,
@@ -67,6 +79,11 @@ class SideDrawer extends StatelessWidget {
             context,
             'Call Ambulance',
             Icons.call,
+          ),
+          buildListTile(
+            context,
+            'About Us',
+            Icons.info,
           ),
         ],
       ),

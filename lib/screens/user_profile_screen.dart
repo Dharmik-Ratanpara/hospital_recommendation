@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'user.dart';
+import '../models/user.dart';
 
 class UserProfileScreen extends StatefulWidget {
   final User dummy = const User('Dharmik', 9313485343, 18, 90, 150);
